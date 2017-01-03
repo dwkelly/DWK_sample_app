@@ -1,0 +1,7 @@
+connect
+/subsystem=datasources/jdbc-driver=oracle:add( \
+    driver-name=oracle, \
+    driver-module-name=oracle.jdbc, \
+    driver-xa-datasource-class-name=oracle.jdbc.xa.client.OracleXADataSource) 
+
+/:reload

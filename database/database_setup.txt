@@ -1,0 +1,14 @@
+execute dbms_xdb.sethttpport('8081');
+select dbms_xdb.gethttpport as "HTTP-Port", dbms_xdb.getftpport as "FTP-Port" from dual;
+
+
+create tablespace DWK_DEV_SBX 
+datafile '/sdk/software/OracleExpress/DWK_DEV_SBX.dbf'
+size 20M reuse autoextend on next 10M 
+extent management local 
+segment space management auto;
+
+
+create user LOCAL_ORACLE identified by "LOCAL_ORACLE" default tablespace DWK_DEV_SBX;
+
+grant ALL PRIVILEGES to LOCAL_ORACLE;

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>user-management-ear</artifactId>
+	<groupId>com.dwk.sample</groupId>
+    <packaging>ear</packaging>
+    <description>EAR for user management.</description>
+
+    <parent>
+        <groupId>com.dwk.sample</groupId>
+        <artifactId>dwk-parent-pom</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../../parent-pom</relativePath>
+    </parent>
+    
+    <build>
+    	<finalName>user-management</finalName>
+    	<plugins>
+    		<plugin>
+    			<artifactId>maven-ear-plugin</artifactId>
+				<configuration>
+					<defaultLibBundleDir>lib/</defaultLibBundleDir>
+					<skinnyWars>true</skinnyWars>
+					<modules>
+						<webModule>
+						    <artifactId>user-management-business-logic</artifactId>
+							<groupId>com.dwk.sample</groupId>
+							<bundleFileName>user-management-business-logic.war</bundleFileName>
+						</webModule>
+					</modules>
+				</configuration>    				
+    		</plugin>
+    	</plugins>
+    </build>
+	
+   	<dependencies>
+   		<dependency>
+			<artifactId>user-management-persistence-model</artifactId>
+			<groupId>com.dwk.sample</groupId>
+		</dependency>	
+		
+		<dependency>
+			<artifactId>user-management-business-logic</artifactId>
+			<groupId>com.dwk.sample</groupId>
+			<type>war</type>
+		</dependency>	
+		
+		<dependency>
+			<groupId>org.jboss.spec.javax.ejb</groupId>
+			<artifactId>jboss-ejb-api_3.2_spec</artifactId>
+		</dependency>
+		
+   	</dependencies>
+</project>

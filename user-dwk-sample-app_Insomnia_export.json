@@ -1,0 +1,131 @@
+{
+  "_type": "export",
+  "__export_format": 1,
+  "__export_date": "2016-12-16T18:31:29.485Z",
+  "__export_source": "insomnia.chrome.app:v2.7.0",
+  "items": [
+    {
+      "_type": "request_group",
+      "_id": "grp_1481904384482",
+      "name": "User - DWK Sample app",
+      "environments": {},
+      "requests": [
+        {
+          "_type": "request",
+          "_id": "req_1481908827939",
+          "url": "http://localhost:8080/user-management-business-logic/webresources/user/getUser",
+          "method": "GET",
+          "body": "{}",
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "params": [
+            {
+              "name": "uuid",
+              "value": "4c40c3a8-9d1e-4d54-b6e3-07ea9be49130"
+            }
+          ],
+          "authentication": {
+            "_type": "basic",
+            "username": "",
+            "password": ""
+          },
+          "__insomnia": {
+            "format": "json",
+            "panel_width": 0.5
+          },
+          "name": "getUser"
+        },
+        {
+          "_type": "request",
+          "_id": "req_1481904384482",
+          "url": "http://localhost:8080/user-management-business-logic/webresources/user/saveUser",
+          "method": "POST",
+          "body": "{\"firstName\":\"Sean\",\n\"lastName\":\"Combs\",\n\"email\":\"Puff@badboy.com\",\n\"appUserId\":\"4c40c3a8-9d1e-4d54-b6e3-07ea9be49130\"\n}",
+          "headers": [],
+          "params": [],
+          "authentication": {
+            "_type": "basic",
+            "username": "",
+            "password": ""
+          },
+          "__insomnia": {
+            "format": "json",
+            "panel_width": 0.5
+          },
+          "name": "saveUser - Puff"
+        },
+        {
+          "_type": "request",
+          "_id": "req_1481909709763",
+          "url": "http://localhost:8080/user-management-business-logic/webresources/user/saveUser",
+          "method": "POST",
+          "body": "{\"firstName\":\"Blue\",\n\"lastName\":\"Carter\",\n\"email\":\"BIC@parkwoodent.com\"\n}",
+          "headers": [],
+          "params": [],
+          "authentication": {
+            "_type": "basic",
+            "username": "",
+            "password": ""
+          },
+          "__insomnia": {
+            "format": "json",
+            "panel_width": 0.5
+          },
+          "name": "saveUser Blue"
+        },
+        {
+          "_type": "request",
+          "_id": "req_1481910335347",
+          "url": "http://localhost:8080/user-management-business-logic/webresources/user/deleteUser",
+          "method": "POST",
+          "body": "",
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "params": [
+            {
+              "name": "uuid",
+              "value": "4c40c3a8-9d1e-4d54-b6e3-07ea9be49130"
+            }
+          ],
+          "authentication": {
+            "_type": "basic",
+            "username": "",
+            "password": ""
+          },
+          "__insomnia": {
+            "format": "json",
+            "panel_width": 0.5
+          },
+          "name": "deleteUser"
+        },
+        {
+          "_type": "request",
+          "_id": "req_1481912899728",
+          "url": "http://localhost:8080/user-management-business-logic/webresources/user/getAllUsers",
+          "method": "GET",
+          "body": "{}",
+          "headers": [],
+          "params": [],
+          "authentication": {
+            "_type": "basic",
+            "username": "",
+            "password": ""
+          },
+          "__insomnia": {
+            "format": "json",
+            "panel_width": 0.5
+          },
+          "name": "getAllUsers"
+        }
+      ]
+    }
+  ]
+}

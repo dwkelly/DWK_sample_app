@@ -1,0 +1,6 @@
+connect
+
+module add --name=oracle.jdbc\
+           --resources=../modules/ojdbc7-12.1.0.2.jar\
+           --module-xml=../modules/ojdbc-module.xml
+:reload

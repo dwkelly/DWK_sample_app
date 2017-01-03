@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+	
+    <name>DWK's Sample Application Suite Parent POM</name>
+	<description> This is parent BOM (Bill of materials) to maintain the project dependencies for the personal development sandbox for Daniel Kelly. For any questions please contact Daniel at d.w.kelly88@gmail.com</description>
+	<groupId>com.dwk.sample</groupId>
+	<artifactId>dwk-parent-bom</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	
+	<properties>
+		<version.org.hibernate>5.0.10.Final</version.org.hibernate>
+        <version.org.jboss.spec.javax.ejb.jboss-ejb-api_3.2_spec>1.0.0.Final</version.org.jboss.spec.javax.ejb.jboss-ejb-api_3.2_spec>
+		<version.org.jboss.spec.javax.ws.jboss-jaxrs-api_2.0_spec>1.0.0.Final</version.org.jboss.spec.javax.ws.jboss-jaxrs-api_2.0_spec>
+		<version.org.springframework>4.3.4.RELEASE</version.org.springframework>
+		<compiler.source.version>1.8</compiler.source.version>
+	</properties>
+	
+
+    <dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.dwk.sample</groupId>
+				<artifactId>user-management-persistence-model</artifactId>
+				<version>${project.version}</version>
+				<type>jar</type>
+			</dependency>
+
+			<dependency>
+				<groupId>com.dwk.sample</groupId>
+				<artifactId>user-management-business-logic</artifactId>
+				<version>${project.version}</version>
+				<type>war</type>
+			</dependency>
+			
+			<dependency>
+				<groupId>com.dwk.sample</groupId>
+				<artifactId>user-management-ear</artifactId>
+				<version>${project.version}</version>
+				<type>ear</type>
+			</dependency>
+			
+			<dependency>
+			    <artifactId>controller</artifactId>
+				<groupId>com.dwk.sample</groupId>
+				<version>${project.version}</version>
+				<type>war</type>
+			</dependency>
+			
+			<!-- Plugin dependencies
+			<dependency>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.19.1</version>
+			</dependency>
+
+			  Failsafe - for integration tests
+			<dependency>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<version>2.19.1</version>
+			</dependency>
+			 Sonar - static code analyzer 
+			<dependency>
+				<groupId>org.sonarsource.scanner.maven</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<version>3.1.1</version>
+			</dependency>
+					<plugin>
+                    <groupId>org.jacoco</groupId>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <version>${jacoco.plugin.version}</version>
+                </plugin>
+-->
+
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-core</artifactId>
+				<version>${version.org.hibernate}</version>
+				<scope>provided</scope>
+			</dependency>
+			
+			<dependency>
+                <groupId>org.jboss.spec.javax.ejb</groupId>
+                <artifactId>jboss-ejb-api_3.2_spec</artifactId>
+                <version>${version.org.jboss.spec.javax.ejb.jboss-ejb-api_3.2_spec}</version>
+				<scope>provided</scope>
+            </dependency>
+			
+			
+			<dependency>
+                <groupId>org.jboss.spec.javax.ws.rs</groupId>
+                <artifactId>jboss-jaxrs-api_2.0_spec</artifactId>
+                <version>${version.org.jboss.spec.javax.ws.jboss-jaxrs-api_2.0_spec}</version>
+				<scope>provided</scope>
+            </dependency>
+			
+			<dependency>
+				<groupId>com.oracle.jdbc</groupId>
+				<artifactId>ojdbc7</artifactId>
+				<version>12.1.0.2</version>
+				<scope>provided</scope>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-core</artifactId>
+				<version>${version.org.springframework}</version>
+			</dependency>	
+			
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-web</artifactId>
+				<version>${version.org.springframework}</version>
+			</dependency>
+	 
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-webmvc</artifactId>
+				<version>${version.org.springframework}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>4.12</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.jboss</groupId>
+				<artifactId>jboss-ejb-client</artifactId>
+				<version>2.1.4.Final</version>
+				<scope>test</scope>
+			</dependency>			
+			
+		</dependencies>
+	</dependencyManagement>
+</project>

@@ -1,0 +1,12 @@
+connect
+data-source add \
+     --name=dwk-sample-app-ds \
+     --driver-name=oracle \
+     --jndi-name=java:jboss/datasources/dwk-sample-app-ds \
+     --user-name=LOCAL_ORACLE  \
+     --password=LOCAL_ORACLE  \
+	 --connection-url=jdbc:oracle:thin:@localhost:1521:XE \
+/subsystem=datasources/data-source=dwk-sample-app-ds/datasource-properties=URL:add(value="jdbc:oracle:thin:@localhost:1521:XE ")
+data-source enable --name=dwk-sample-app-ds
+
+:reload
