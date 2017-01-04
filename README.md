@@ -3,7 +3,7 @@ This is a sample java application used for demonstrating technologies.
 
 
 ##Getting started
-The following software is required to run this application
+The following software is required to run this application:
 
 + Java 1.8
 + Maven 3
